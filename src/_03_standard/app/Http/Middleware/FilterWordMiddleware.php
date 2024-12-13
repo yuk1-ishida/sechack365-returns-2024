@@ -12,12 +12,12 @@ class FilterWordMiddleware implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $word = $request->getQueryParams()['word'];
-        if ($word === 'unko')
-        {
-            return new Response(500);
-        }
+        /**
+         * @todo フィルタリングを書く、引っかかったら new Response(400 で返す
+         */
 
-        return $handler->handle($request);
+        /**
+         * @todo フィルタリングで問題がなければ $handler->handle($request); で次のミドルウェアに流す処理を書く
+         */
     }
 }

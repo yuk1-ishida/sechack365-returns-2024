@@ -12,9 +12,9 @@ class HelloWorldAction implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $word = $request->getQueryParams()['word'];
-        return new Response(200, [
-            'Content-Type' => 'application/json'
-        ], (string)json_encode(['hello' => $word]));
+        /**
+         * @todo hello {word}となるようにレスポンスを組み立てる
+         * レスポンスは new Response(...)で組み立てる
+         */
     }
 }

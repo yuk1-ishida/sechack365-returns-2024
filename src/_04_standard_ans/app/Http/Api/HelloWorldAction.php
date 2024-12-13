@@ -14,6 +14,6 @@ class HelloWorldAction implements MiddlewareInterface
     {
         return new Response(200, [
             'Content-Type' => 'application/json'
-        ], (string)json_encode(['hello' => $request->getQueryParams()['hello']]));
+        ], (string)json_encode(['hello' => $request->getParsedBody()['word']]));
     }
 }
