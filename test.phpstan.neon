@@ -1,0 +1,9 @@
+parameters:
+	level: 9
+	paths:
+		- index.php
+		#- src
+	excludePaths:
+		- src/chap1/_02/rules
+rules:
+	- App\chap1\_02\rules\SqlRule

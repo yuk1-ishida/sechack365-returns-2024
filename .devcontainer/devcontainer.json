@@ -1,0 +1,19 @@
+{
+	"name": "PHP",
+	"dockerComposeFile": "compose.yaml",
+	"service": "workspace",
+	"workspaceFolder": "/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"sanderronde.phpstan-vscode",
+				"bmewburn.vscode-intelephense-client",
+				"streetsidesoftware.code-spell-checker",
+				"formulahendry.code-runner",
+				"junstyle.php-cs-fixer"
+			]
+		}
+	}
+}

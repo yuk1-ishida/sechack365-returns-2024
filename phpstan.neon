@@ -1,0 +1,7 @@
+parameters:
+	level: 9
+	paths:
+		- src/_02_phpstan/
+		- src/_03_standard/
+rules:
+	- App\_02_phpstan\_02\rules\SqlRule

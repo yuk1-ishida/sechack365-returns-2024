@@ -1,0 +1,13 @@
+{
+  /** intelephenseによる解析の有効無効 */
+  "intelephense.diagnostics.enable": false,
+  /** ターミナルで出力する設定 */
+  "code-runner.runInTerminal": true,
+  /** PHP-CS-Fixerの設定 */
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.config": ".php-cs-fixer.php",
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  },
+}

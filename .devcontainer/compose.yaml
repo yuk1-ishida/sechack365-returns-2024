@@ -1,0 +1,26 @@
+services:
+  workspace:
+    build:
+      context: ../
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+      - ../src/_03_standard/public:/var/www/html
+      - ../vendor:/var/www/vendor
+    ports:
+      - 8081:80
+    command: /bin/sh -c "cd /workspace && composer install && apachectl -D FOREGROUND"
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: sechack
+      MYSQL_DATABASE: sechack
+      MYSQL_USER: sechack
+      MYSQL_PASSWORD: sechack
+    volumes:
+      - ./mysql/init/:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
