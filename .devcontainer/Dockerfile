@@ -8,4 +8,6 @@ RUN apt update
 RUN apt install -y wget git unzip libpq-dev \
     && docker-php-ext-install mysqli pdo pdo_mysql
 
+RUN sed -i '/<Directory "\/var\/www\/html">/,/<\/Directory>/s/AllowOverride None/AllowOverride ALL/' /etc/apache2/apache2.conf 
+
 CMD ["apache2-foreground"]
