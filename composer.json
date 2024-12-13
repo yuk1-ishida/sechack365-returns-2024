@@ -7,8 +7,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "Tests\\": "tests/"
+            "App\\": "app/",
+            "Tests\\": "tests/",
+            "Route\\": "route/"
         }
     },
     "require": {
