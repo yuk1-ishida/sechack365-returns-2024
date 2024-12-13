@@ -17,7 +17,7 @@ try {
     $creator = new ServerRequestCreator($psr17Factory, $psr17Factory, $psr17Factory, $psr17Factory);
     $serverRequest = $creator->fromGlobals();
 
-    require_once __DIR__ . '/../../../route/web.php';
+    require_once __DIR__ . '/../route/web.php';
 
     $queue = Route::findAndRoute($serverRequest, null);
 
@@ -27,7 +27,6 @@ try {
     /**
      * @todo : リクエストを取得し、イミュータブルなオブジェクトに変換する
      */
-
 
     /**
      * @todo : ルーティング処理を行う
